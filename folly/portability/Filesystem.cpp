@@ -26,7 +26,7 @@ path lexically_normal_fn::operator()(path const& p) const {
 
 #elif __cpp_lib_experimental_filesystem >= 201406
 
-//  mimic: std::filesystem::path::lexically_normal, C++17
+//  mimic: std::experimental::filesystem::path::lexically_normal, C++17
 //  from: https://github.com/gulrak/filesystem/tree/v1.5.0, MIT
 path lexically_normal_fn::operator()(path const& p) const {
   path dest;

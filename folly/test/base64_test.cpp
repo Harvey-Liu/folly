@@ -82,12 +82,12 @@ struct ConstexprTest {
   static constexpr std::array<char, 2> toEncode{{'a', 'b'}};
   static constexpr std::array<char, 5> encoded = base64EncodeArray(toEncode);
 
-  static constexpr std::string_view expected = "YWI=";
+  static const std::string_view expected = "YWI=";
   static constexpr std::size_t decodedSize = folly::base64DecodedSize(expected);
   static constexpr auto decoded = base64DecodeToArray<decodedSize>(expected);
 
   // C++17 constexpr bug
-  static constexpr std::string_view encoded_sv =
+  static const std::string_view encoded_sv =
       std::string_view(encoded.data(), encoded.size() - 1);
 
   static_assert(decodedSize == 2);
@@ -99,13 +99,13 @@ struct ConstexprURLTest {
   static constexpr std::array<char, 2> toEncode{{'a', 'b'}};
   static constexpr std::array<char, 4> encoded = base64URLEncodeArray(toEncode);
 
-  static constexpr std::string_view expected = "YWI";
+  static const std::string_view expected = "YWI";
   static constexpr std::size_t decodedSize =
       folly::base64URLDecodedSize(expected);
   static constexpr auto decoded = base64URLDecodeToArray<decodedSize>(expected);
 
   // C++17 constexpr bug
-  static constexpr std::string_view encoded_sv =
+  static const std::string_view encoded_sv =
       std::string_view(encoded.data(), encoded.size() - 1);
 
   static_assert(decodedSize == 2);

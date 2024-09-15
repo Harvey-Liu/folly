@@ -282,7 +282,7 @@ TEST(Tape, RecordBuilder) {
   }
   {
     auto builder = st.new_record_builder();
-    constexpr std::string_view s = "abc";
+    const std::string_view s = "abc";
     std::copy(s.begin(), s.end(), builder.back_inserter());
     builder.commit();
   }
@@ -407,9 +407,9 @@ TEST(Tape, PushBackStr) {
   st.push_back("abc");
   st.push_back({'d', 'e'});
 
-  constexpr std::string_view c = "fgh";
+  const std::string_view c = "fgh";
   st.push_back(c);
-  constexpr std::string_view d = "ijklm";
+  const std::string_view d = "ijklm";
   st.push_back(d.begin(), d.end());
   ASSERT_THAT(st, testing::ElementsAre("abc", "de", "fgh", "ijklm"));
 }

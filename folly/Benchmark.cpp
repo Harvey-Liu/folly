@@ -383,8 +383,8 @@ static string metricReadable(double n, unsigned int decimals) {
 
 namespace {
 
-constexpr std::string_view kUnitHeaders = "relative  time/iter   iters/s";
-constexpr std::string_view kUnitHeadersPadding = "     ";
+const std::string_view kUnitHeaders = "relative  time/iter   iters/s";
+const std::string_view kUnitHeadersPadding = "     ";
 void printHeaderContents(std::string_view file) {
   printf(
       "%-.*s%*s%*s",
@@ -404,7 +404,7 @@ void printDefaultHeaderContents(std::string_view file, size_t columns) {
     printHeaderContents(file);
   } else {
     std::string truncatedFile = std::string(file.begin(), file.end());
-    constexpr std::string_view overflowFilePrefix = "[...]";
+    const std::string_view overflowFilePrefix = "[...]";
     const int overflow = truncatedFile.size() - maxFileNameChars;
     truncatedFile.erase(0, overflow);
     truncatedFile.replace(0, overflowFilePrefix.size(), overflowFilePrefix);
