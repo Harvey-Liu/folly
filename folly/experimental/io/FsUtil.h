@@ -17,7 +17,7 @@
 #pragma once
 
 #if __has_include(<filesystem>)
-#include <filesystem>
+#include <experimental/filesystem>
 #endif
 
 #include <boost/filesystem.hpp>
@@ -26,7 +26,7 @@ namespace folly {
 namespace fs {
 
 #if __cpp_lib_filesystem >= 201703
-namespace std_fs = std::filesystem;
+namespace std_fs = std::experimental::filesystem;
 #endif
 
 // Functions defined in this file are meant to extend the

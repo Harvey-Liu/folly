@@ -75,7 +75,7 @@ class CPUThreadPoolExecutor : public ThreadPoolExecutor,
       allow,
     };
 
-    constexpr Options() noexcept
+    Options() noexcept
         : blocking{Blocking::allow}, queueObserverFactory{nullptr} {}
 
     Options& setBlocking(Blocking b) {

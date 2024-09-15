@@ -210,7 +210,7 @@ TEST(SplitStringSimd, ByChar) {
 
   // special case: triggered shift right by 32 on uint32
   {
-    constexpr std::string_view kTestData = "ong_history_by_pagetype_convr:0,";
+    const std::string_view kTestData = "ong_history_by_pagetype_convr:0,";
     static_assert(kTestData.size() == 32);
 
     alignas(32) std::array<char, 32> buf;

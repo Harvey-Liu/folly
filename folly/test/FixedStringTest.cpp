@@ -670,7 +670,7 @@ TEST(FixedStringConversionTest, ConversionToFollyRange) {
 
 TEST(FixedStringConversionTest, ConversionToStringView) {
   static constexpr folly::FixedString<16> tmp{"This is a string"};
-  constexpr std::string_view view = tmp;
+  const std::string_view view = tmp;
   static_assert(tmp.data() == view.data(), "");
   static_assert(tmp.size() == view.size(), "");
 }

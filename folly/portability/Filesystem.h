@@ -17,7 +17,7 @@
 #pragma once
 
 #if __has_include(<filesystem>)
-#include <filesystem>
+#include <experimental/filesystem>
 #elif __has_include(<experimental/filesystem>)
 #include <experimental/filesystem>
 #else
@@ -33,7 +33,7 @@ enum class which_enum {
 
 #if __cpp_lib_filesystem >= 201703
 
-namespace std_fs = std::filesystem;
+namespace std_fs = std::experimental::filesystem;
 inline constexpr which_enum which = which_enum::std;
 
 #elif __cpp_lib_experimental_filesystem >= 201406

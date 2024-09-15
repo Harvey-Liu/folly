@@ -438,7 +438,7 @@ struct DecodingErrorDetectionTest {
     // clang-format on
 };
 
-constexpr std::string_view kDecodingOnlyURLValid[] = {
+const std::string_view kDecodingOnlyURLValid[] = {
     "ba",
     "ba__",
     "ba__ba--ba__",
